@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ARCADE MATH</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> ADIVINHE O NUMERO</h1>
+
+        {{^finalizado}}
+        <p style="font-size: 10px; margin-bottom: 10px;">INTERVALO: 1 A 100</p>
+        <form action="/jogar" method="post">
+            <input type="number" name="palpite" placeholder="SEU PALPITE" required min="1" max="100" autofocus>
+            <button type="submit">JOGAR</button>
+        </form>
+        {{/finalizado}}
+
+        <div class="resultado-msg">
+            <p style="white-space: pre-line;">{{resultado}}</p>
+        </div>
+
+        {{#finalizado}}
+            <a href="/" class="btn-link">TENTAR NOVAMENTE</a>
+        {{/finalizado}}
+
+        <div class="footer-math">
+            log₂(100) ≈ 6.64 | MAX TENTATIVAS: 7
+        </div>
+    </div>
+</body>
+</html>
